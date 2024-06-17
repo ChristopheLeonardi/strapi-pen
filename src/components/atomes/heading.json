@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_atomes_headings",
+  "info": {
+    "displayName": "heading"
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "sousTitre": {
+      "type": "string"
+    }
+  }
+}

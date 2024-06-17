@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_molecules_some_actions",
+  "info": {
+    "displayName": "someActions",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titrage": {
+      "type": "component",
+      "repeatable": true,
+      "component": "atomes.heading"
+    }
+  }
+}

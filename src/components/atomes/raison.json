@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_widget_raisons",
+  "info": {
+    "displayName": "TexteRepetable",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "argument": {
+      "type": "text",
+      "maxLength": 200
+    }
+  }
+}

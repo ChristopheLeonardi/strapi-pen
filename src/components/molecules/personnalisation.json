@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_widget_personnalisations",
+  "info": {
+    "displayName": "exemplePersonnalisation",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "imageAndLink": {
+      "type": "component",
+      "repeatable": true,
+      "component": "atomes.imageandlink"
+    }
+  }
+}

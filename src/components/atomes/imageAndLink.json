@@ -1,0 +1,23 @@
+{
+    "collectionName": "components_atomes_image_and_links",
+    "info": {
+      "displayName": "imageAndLink"
+    },
+    "options": {},
+    "attributes": {
+      "image": {
+        "allowedTypes": [
+          "images",
+          "files",
+          "videos",
+          "audios"
+        ],
+        "type": "media",
+        "multiple": false
+      },
+      "Lien": {
+        "type": "string"
+      }
+    }
+  }
+  

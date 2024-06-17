@@ -47,6 +47,19 @@
     "pagesNavigation": {
       "type": "json",
       "required": true
+    },
+    "LanguesDisponibles": {
+      "type": "customField",
+      "options": [
+        "Français | fr",
+        "English | en",
+        "Español | es",
+        ""
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    },
+    "traduction": {
+      "type": "json"
     }
   }
 }

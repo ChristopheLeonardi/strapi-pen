@@ -4,7 +4,8 @@
   "info": {
     "singularName": "request",
     "pluralName": "requests",
-    "displayName": "request"
+    "displayName": "request",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,9 +20,6 @@
     },
     "message": {
       "type": "text"
-    },
-    "prenom": {
-      "type": "string"
     }
   }
 }

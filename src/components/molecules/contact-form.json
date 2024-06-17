@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_widget_contact_forms",
+  "info": {
+    "displayName": "contactForm",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "successMessage": {
+      "type": "string"
+    },
+    "errorMessage": {
+      "type": "string"
+    },
+    "missingFieldMessage": {
+      "type": "string"
+    },
+    "formContent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atomes.form_content"
+    },
+    "heading": {
+      "type": "component",
+      "repeatable": true,
+      "component": "atomes.heading"
+    }
+  }
+}

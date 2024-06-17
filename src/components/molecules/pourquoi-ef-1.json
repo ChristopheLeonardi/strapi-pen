@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_widget_pourquoi_ef_1s",
+  "info": {
+    "displayName": "pourquoiEF1",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "raison": {
+      "displayName": "raison",
+      "type": "component",
+      "repeatable": true,
+      "component": "atomes.raison"
+    }
+  }
+}

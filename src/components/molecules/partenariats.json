@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_widget_partenariats",
+  "info": {
+    "displayName": "partenariats",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "imageAndLink": {
+      "type": "component",
+      "repeatable": true,
+      "component": "atomes.imageandlink"
+    },
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atomes.heading"
+    }
+  }
+}

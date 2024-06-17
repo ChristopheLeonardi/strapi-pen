@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_widget_citation_components",
+  "info": {
+    "displayName": "citationComponent",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "citation": {
+      "type": "component",
+      "repeatable": true,
+      "component": "atomes.citation"
+    },
+    "heading": {
+      "type": "component",
+      "repeatable": true,
+      "component": "atomes.heading"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_widget_numerotations",
+  "info": {
+    "displayName": "numerotation",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "string"
+    },
+    "raison": {
+      "type": "text",
+      "maxLength": 150
+    }
+  }
+}

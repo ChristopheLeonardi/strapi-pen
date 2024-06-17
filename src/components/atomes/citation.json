@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_widget_citations",
+  "info": {
+    "displayName": "citation",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "citation": {
+      "type": "text"
+    },
+    "auteur": {
+      "type": "string"
+    }
+  }
+}
