@@ -26,6 +26,10 @@
     },
     "buttonLabel": {
       "type": "string"
+    },
+    "vocation": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

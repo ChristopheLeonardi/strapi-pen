@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_molecules_actions_vignettes",
+  "info": {
+    "displayName": "ActionsVignettes"
+  },
+  "options": {},
+  "attributes": {
+    "single_actions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::single-action.single-action"
+    },
+    "titre": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atomes.heading"
+    }
+  }
+}

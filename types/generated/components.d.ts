@@ -1,5 +1,18 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface AtomesButton extends Schema.Component {
+  collectionName: 'components_atomes_buttons';
+  info: {
+    displayName: 'button';
+    description: '';
+  };
+  attributes: {
+    buttonLabel: Attribute.String;
+    buttonTitle: Attribute.String;
+    link: Attribute.String;
+  };
+}
+
 export interface AtomesCitation extends Schema.Component {
   collectionName: 'components_widget_citations';
   info: {
@@ -48,6 +61,18 @@ export interface AtomesImageandlink extends Schema.Component {
   };
 }
 
+export interface AtomesInputForm extends Schema.Component {
+  collectionName: 'components_atomes_input_forms';
+  info: {
+    displayName: 'InputLabel';
+    description: '';
+  };
+  attributes: {
+    label: Attribute.String;
+    idAndName: Attribute.String;
+  };
+}
+
 export interface AtomesNumerotation extends Schema.Component {
   collectionName: 'components_widget_numerotations';
   info: {
@@ -92,6 +117,22 @@ export interface AtomesVignette extends Schema.Component {
       }>;
     lien: Attribute.String;
     buttonLabel: Attribute.String;
+    vocation: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
+export interface MoleculesActionsVignettes extends Schema.Component {
+  collectionName: 'components_molecules_actions_vignettes';
+  info: {
+    displayName: 'ActionsVignettes';
+  };
+  attributes: {
+    single_actions: Attribute.Relation<
+      'molecules.actions-vignettes',
+      'oneToMany',
+      'api::single-action.single-action'
+    >;
+    titre: Attribute.Component<'atomes.heading'>;
   };
 }
 
@@ -141,8 +182,42 @@ export interface MoleculesPartenariats extends Schema.Component {
     description: '';
   };
   attributes: {
-    imageAndLink: Attribute.Component<'atomes.imageandlink', true>;
     heading: Attribute.Component<'atomes.heading'>;
+    partenaires: Attribute.Relation<
+      'molecules.partenariats',
+      'oneToMany',
+      'api::partenaire.partenaire'
+    >;
+  };
+}
+
+export interface MoleculesPersonnalisationForm extends Schema.Component {
+  collectionName: 'components_molecules_personnalisation_forms';
+  info: {
+    displayName: 'PersonnalisationForm';
+    description: '';
+  };
+  attributes: {
+    Heading: Attribute.Component<'atomes.heading'>;
+    typeLabel: Attribute.String;
+    typeOption: Attribute.Component<'atomes.input-form', true>;
+    orientationTitre: Attribute.String;
+    orientationOption: Attribute.Component<'atomes.input-form', true>;
+    sloganTitre: Attribute.String;
+    sloganInput: Attribute.Component<'atomes.input-form'>;
+    CGV: Attribute.Component<'atomes.input-form'>;
+    uploadLabel: Attribute.String;
+    uploadTexte: Attribute.String;
+    submitButton: Attribute.Component<'atomes.button'>;
+    createVerso: Attribute.Component<'atomes.button'>;
+    baseEfoSlogan: Attribute.Media;
+    baseEfoPerso: Attribute.Media;
+    lienGuide: Attribute.String;
+    lienCGV: Attribute.String;
+    titreLienCGV: Attribute.String;
+    titreLienGuide: Attribute.String;
+    baseEfoSloganVertical: Attribute.Media;
+    baseEfoPersoVertical: Attribute.Media;
   };
 }
 
@@ -193,24 +268,41 @@ export interface MoleculesSomeActions extends Schema.Component {
   };
 }
 
+export interface MoleculesVignetteComponent extends Schema.Component {
+  collectionName: 'components_molecules_vignette_components';
+  info: {
+    displayName: 'VignetteComponent';
+    description: '';
+  };
+  attributes: {
+    titre: Attribute.Component<'atomes.heading'>;
+    vignettes: Attribute.Component<'atomes.vignette', true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'atomes.button': AtomesButton;
       'atomes.citation': AtomesCitation;
       'atomes.form_content': AtomesFormContent;
       'atomes.heading': AtomesHeading;
       'atomes.imageandlink': AtomesImageandlink;
+      'atomes.input-form': AtomesInputForm;
       'atomes.numerotation': AtomesNumerotation;
       'atomes.raison': AtomesRaison;
       'atomes.vignette': AtomesVignette;
+      'molecules.actions-vignettes': MoleculesActionsVignettes;
       'molecules.citation-component': MoleculesCitationComponent;
       'molecules.commentobtenir': MoleculesCommentobtenir;
       'molecules.contact-form': MoleculesContactForm;
       'molecules.partenariats': MoleculesPartenariats;
+      'molecules.personnalisation-form': MoleculesPersonnalisationForm;
       'molecules.personnalisation': MoleculesPersonnalisation;
       'molecules.pourquoi-ef-1': MoleculesPourquoiEf1;
       'molecules.principe': MoleculesPrincipe;
       'molecules.some-actions': MoleculesSomeActions;
+      'molecules.vignette-component': MoleculesVignetteComponent;
     }
   }
 }

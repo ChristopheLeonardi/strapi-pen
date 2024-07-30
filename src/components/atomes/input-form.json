@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_atomes_input_forms",
+  "info": {
+    "displayName": "InputLabel",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "idAndName": {
+      "type": "string"
+    }
+  }
+}

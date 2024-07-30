@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_atomes_buttons",
+  "info": {
+    "displayName": "button",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "buttonLabel": {
+      "type": "string"
+    },
+    "buttonTitle": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

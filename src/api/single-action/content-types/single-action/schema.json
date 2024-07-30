@@ -173,6 +173,26 @@
         }
       },
       "component": "atomes.heading"
+    },
+    "PersonnalisationForm": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "molecules.personnalisation-form"
+    },
+    "linkButton": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "atomes.button"
     }
   }
 }

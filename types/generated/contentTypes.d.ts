@@ -865,6 +865,98 @@ export interface ApiAboutAbout extends Schema.SingleType {
   };
 }
 
+export interface ApiAccueilAccueil extends Schema.SingleType {
+  collectionName: 'accueils';
+  info: {
+    singularName: 'accueil';
+    pluralName: 'accueils';
+    displayName: 'accueil';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Heading: Attribute.Component<'atomes.heading'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ImageEntete: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    citation: Attribute.Component<'atomes.citation'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    diaporama: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    content: Attribute.Blocks &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    vignettesSection: Attribute.Component<
+      'molecules.vignette-component',
+      true
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    partenariats: Attribute.Component<'molecules.partenariats'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    actionsVignettes: Attribute.Component<'molecules.actions-vignettes'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::accueil.accueil',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::accueil.accueil',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::accueil.accueil',
+      'oneToMany',
+      'api::accueil.accueil'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiActionAction extends Schema.SingleType {
   collectionName: 'actions';
   info: {
@@ -943,6 +1035,71 @@ export interface ApiActionAction extends Schema.SingleType {
       'api::action.action',
       'oneToMany',
       'api::action.action'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiAgendaAgenda extends Schema.SingleType {
+  collectionName: 'agendas';
+  info: {
+    singularName: 'agenda';
+    pluralName: 'agendas';
+    displayName: 'Agenda';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    entete: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    titre: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    sousTitre: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    template: Attribute.Enumeration<['simple', 'agenda']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::agenda.agenda',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::agenda.agenda',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::agenda.agenda',
+      'oneToMany',
+      'api::agenda.agenda'
     >;
     locale: Attribute.String;
   };
@@ -1143,6 +1300,36 @@ export interface ApiFedererFederer extends Schema.SingleType {
   };
 }
 
+export interface ApiPartenairePartenaire extends Schema.CollectionType {
+  collectionName: 'partenaires';
+  info: {
+    singularName: 'partenaire';
+    pluralName: 'partenaires';
+    displayName: 'partenaire';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    imageAndLink: Attribute.Component<'atomes.imageandlink'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::partenaire.partenaire',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::partenaire.partenaire',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRequestRequest extends Schema.CollectionType {
   collectionName: 'requests';
   info: {
@@ -1287,6 +1474,18 @@ export interface ApiSingleActionSingleAction extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    PersonnalisationForm: Attribute.Component<'molecules.personnalisation-form'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    linkButton: Attribute.Component<'atomes.button'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1330,10 +1529,13 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
+      'api::accueil.accueil': ApiAccueilAccueil;
       'api::action.action': ApiActionAction;
+      'api::agenda.agenda': ApiAgendaAgenda;
       'api::configuration.configuration': ApiConfigurationConfiguration;
       'api::education.education': ApiEducationEducation;
       'api::federer.federer': ApiFedererFederer;
+      'api::partenaire.partenaire': ApiPartenairePartenaire;
       'api::request.request': ApiRequestRequest;
       'api::single-action.single-action': ApiSingleActionSingleAction;
     }

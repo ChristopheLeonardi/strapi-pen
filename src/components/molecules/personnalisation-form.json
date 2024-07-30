@@ -1,0 +1,107 @@
+{
+  "collectionName": "components_molecules_personnalisation_forms",
+  "info": {
+    "displayName": "PersonnalisationForm",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atomes.heading"
+    },
+    "typeLabel": {
+      "type": "string"
+    },
+    "typeOption": {
+      "type": "component",
+      "repeatable": true,
+      "component": "atomes.input-form"
+    },
+    "orientationTitre": {
+      "type": "string"
+    },
+    "orientationOption": {
+      "type": "component",
+      "repeatable": true,
+      "component": "atomes.input-form"
+    },
+    "sloganTitre": {
+      "type": "string"
+    },
+    "sloganInput": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atomes.input-form"
+    },
+    "CGV": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atomes.input-form"
+    },
+    "uploadLabel": {
+      "type": "string"
+    },
+    "uploadTexte": {
+      "type": "string"
+    },
+    "submitButton": {
+      "displayName": "button",
+      "type": "component",
+      "repeatable": false,
+      "component": "atomes.button"
+    },
+    "createVerso": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atomes.button"
+    },
+    "baseEfoSlogan": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "baseEfoPerso": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "lienGuide": {
+      "type": "string"
+    },
+    "lienCGV": {
+      "type": "string"
+    },
+    "titreLienCGV": {
+      "type": "string"
+    },
+    "titreLienGuide": {
+      "type": "string"
+    },
+    "baseEfoSloganVertical": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "baseEfoPersoVertical": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
