@@ -70,6 +70,7 @@ export interface AtomesInputForm extends Schema.Component {
   attributes: {
     label: Attribute.String;
     idAndName: Attribute.String;
+    placeholder: Attribute.String;
   };
 }
 
@@ -218,6 +219,17 @@ export interface MoleculesPersonnalisationForm extends Schema.Component {
     titreLienGuide: Attribute.String;
     baseEfoSloganVertical: Attribute.Media;
     baseEfoPersoVertical: Attribute.Media;
+    TextChoixDuFond: Attribute.Text;
+    typeId: Attribute.String;
+    orientationId: Attribute.String;
+    radioPlaneteId: Attribute.String;
+    imageUploadTitle: Attribute.String;
+    radioPlanetelabels: Attribute.Component<'atomes.input-form', true>;
+    SloganCanvasTitle: Attribute.String;
+    SloganCanvasSubtitle: Attribute.String;
+    PersoCanvasTitle: Attribute.String;
+    PersoCanvasSubtitle: Attribute.String;
+    lang: Attribute.String;
   };
 }
 

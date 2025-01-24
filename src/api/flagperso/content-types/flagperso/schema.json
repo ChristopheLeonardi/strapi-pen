@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "flagpersos",
+  "info": {
+    "singularName": "flagperso",
+    "pluralName": "flagpersos",
+    "displayName": "flagperso"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "personnalisation": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

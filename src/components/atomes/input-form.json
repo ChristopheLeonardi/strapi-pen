@@ -11,6 +11,9 @@
     },
     "idAndName": {
       "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
     }
   }
 }

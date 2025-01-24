@@ -72,6 +72,16 @@
         }
       },
       "component": "molecules.contact-form"
+    },
+    "ef1_link": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "atomes.button"
     }
   }
 }

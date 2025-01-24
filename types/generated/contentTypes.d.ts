@@ -841,6 +841,12 @@ export interface ApiAboutAbout extends Schema.SingleType {
           localized: true;
         };
       }>;
+    ef1_link: Attribute.Component<'atomes.button'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1128,6 +1134,7 @@ export interface ApiConfigurationConfiguration extends Schema.CollectionType {
         ['Fran\u00E7ais | fr', 'English | en', 'Espa\u00F1ol | es', '']
       >;
     traduction: Attribute.JSON;
+    noCookie: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1297,6 +1304,36 @@ export interface ApiFedererFederer extends Schema.SingleType {
       'api::federer.federer'
     >;
     locale: Attribute.String;
+  };
+}
+
+export interface ApiFlagpersoFlagperso extends Schema.CollectionType {
+  collectionName: 'flagpersos';
+  info: {
+    singularName: 'flagperso';
+    pluralName: 'flagpersos';
+    displayName: 'flagperso';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    personnalisation: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::flagperso.flagperso',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::flagperso.flagperso',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
   };
 }
 
@@ -1486,6 +1523,12 @@ export interface ApiSingleActionSingleAction extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    flagUseConsent: Attribute.Component<'atomes.input-form'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1535,6 +1578,7 @@ declare module '@strapi/types' {
       'api::configuration.configuration': ApiConfigurationConfiguration;
       'api::education.education': ApiEducationEducation;
       'api::federer.federer': ApiFedererFederer;
+      'api::flagperso.flagperso': ApiFlagpersoFlagperso;
       'api::partenaire.partenaire': ApiPartenairePartenaire;
       'api::request.request': ApiRequestRequest;
       'api::single-action.single-action': ApiSingleActionSingleAction;

@@ -1,7 +1,18 @@
 module.exports = [
   'strapi::logger',
   'strapi::errors',
-  'strapi::security',
+  //'strapi::security',
+  {
+    name: "strapi::security",
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          "frame-src": ["https://plausible.io"]
+        }
+      }
+    }
+  },  
   'strapi::cors',
   'strapi::poweredBy',
   'strapi::query',
@@ -18,5 +29,5 @@ module.exports = [
         maxFileSize: 200 * 1024 * 1024, // multipart data, modify here limit of uploaded file size
       },
     },
-  },
+  }
 ];

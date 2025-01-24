@@ -97,11 +97,47 @@
       ]
     },
     "baseEfoPersoVertical": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "TextChoixDuFond": {
+      "type": "text"
+    },
+    "typeId": {
+      "type": "string"
+    },
+    "orientationId": {
+      "type": "string"
+    },
+    "radioPlaneteId": {
+      "type": "string"
+    },
+    "imageUploadTitle": {
+      "type": "string"
+    },
+    "radioPlanetelabels": {
+      "type": "component",
+      "repeatable": true,
+      "component": "atomes.input-form"
+    },
+    "SloganCanvasTitle": {
+      "type": "string"
+    },
+    "SloganCanvasSubtitle": {
+      "type": "string"
+    },
+    "PersoCanvasTitle": {
+      "type": "string"
+    },
+    "PersoCanvasSubtitle": {
+      "type": "string"
+    },
+    "lang": {
+      "type": "string"
     }
   }
 }

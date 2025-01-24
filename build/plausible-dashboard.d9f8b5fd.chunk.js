@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkstrapi_pen=self.webpackChunkstrapi_pen||[]).push([[8023],{96964:(P,t,s)=>{s.r(t),s.d(t,{default:()=>D});var n=s(92132),E=s(21272),l=s(38591);const a=(0,E.lazy)(()=>s.e(3739).then(s.bind(s,66120))),D=()=>(0,n.jsx)(E.Suspense,{fallback:(0,n.jsx)(l.Bl,{}),children:(0,n.jsx)(a,{})})}}]);

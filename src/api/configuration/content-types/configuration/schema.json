@@ -60,6 +60,9 @@
     },
     "traduction": {
       "type": "json"
+    },
+    "noCookie": {
+      "type": "text"
     }
   }
 }
