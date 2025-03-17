@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_molecules_module_picto_trombis",
+  "info": {
+    "displayName": "module_picto_trombi",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "sousTitre": {
+      "type": "string"
+    },
+    "module_picto_collaborateur": {
+      "type": "component",
+      "repeatable": true,
+      "component": "atomes.single-icone-collaborateur"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Icone",
+        "Collaborateur",
+        "Citations"
+      ]
+    },
+    "Body_section": {
+      "type": "blocks"
+    },
+    "titre_icons_group": {
+      "type": "string"
+    },
+    "background_color": {
+      "type": "string"
+    }
+  }
+}

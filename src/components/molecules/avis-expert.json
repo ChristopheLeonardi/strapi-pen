@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_molecules_avis_experts",
+  "info": {
+    "displayName": "avis_expert",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "citation": {
+      "type": "text"
+    },
+    "nom": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "background_color": {
+      "type": "string"
+    }
+  }
+}

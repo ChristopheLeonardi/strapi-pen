@@ -16,42 +16,9 @@
     }
   },
   "attributes": {
-    "Heading": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "atomes.heading"
-    },
-    "ImageEntete": {
+    "entete_image": {
       "type": "media",
       "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
-    "citation": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "atomes.citation"
-    },
-    "diaporama": {
-      "type": "media",
-      "multiple": true,
       "required": false,
       "allowedTypes": [
         "images"
@@ -70,7 +37,56 @@
       },
       "type": "blocks"
     },
-    "vignettesSection": {
+    "titre": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "sousTitre": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
+    },
+    "text_position": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right",
+        "center"
+      ]
+    },
+    "CTA_entete": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "molecules.cta"
+    },
+    "CTA_bas_de_page": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "molecules.cta"
+    },
+    "Bandeau_Texte_Photo": {
       "type": "component",
       "repeatable": true,
       "pluginOptions": {
@@ -78,27 +94,7 @@
           "localized": true
         }
       },
-      "component": "molecules.vignette-component"
-    },
-    "partenariats": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "molecules.partenariats"
-    },
-    "actionsVignettes": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "molecules.actions-vignettes"
+      "component": "molecules.bandeau-texte-photo"
     }
   }
 }

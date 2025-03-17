@@ -16,19 +16,6 @@
     }
   },
   "attributes": {
-    "entete": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "titre": {
       "pluginOptions": {
         "i18n": {
@@ -53,7 +40,17 @@
       },
       "type": "blocks"
     },
-    "partenariats": {
+    "Body_section": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "molecules.module-picto-trombi"
+    },
+    "Partenaires": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -63,7 +60,7 @@
       },
       "component": "molecules.partenariats"
     },
-    "contact": {
+    "End_section": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -71,9 +68,9 @@
           "localized": true
         }
       },
-      "component": "molecules.contact-form"
+      "component": "molecules.module-picto-trombi"
     },
-    "ef1_link": {
+    "CTA": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -81,7 +78,15 @@
           "localized": true
         }
       },
-      "component": "atomes.button"
+      "component": "molecules.cta"
+    },
+    "background_color_principal": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

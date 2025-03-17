@@ -36,6 +36,7 @@ export interface AtomesFormContent extends Schema.Component {
     messageLabel: Attribute.Text;
     submitLabel: Attribute.String;
     emailLabel: Attribute.String;
+    first_name: Attribute.String;
   };
 }
 
@@ -74,6 +75,20 @@ export interface AtomesInputForm extends Schema.Component {
   };
 }
 
+export interface AtomesModulePhotoVideo extends Schema.Component {
+  collectionName: 'components_atomes_module_photo_videos';
+  info: {
+    displayName: 'module_photo_video';
+    description: '';
+  };
+  attributes: {
+    media: Attribute.Media;
+    body: Attribute.Blocks;
+    Avis_expert: Attribute.Component<'molecules.avis-expert', true>;
+    background_color: Attribute.String;
+  };
+}
+
 export interface AtomesNumerotation extends Schema.Component {
   collectionName: 'components_widget_numerotations';
   info: {
@@ -96,10 +111,24 @@ export interface AtomesRaison extends Schema.Component {
     description: '';
   };
   attributes: {
-    argument: Attribute.Text &
+    texte: Attribute.String &
       Attribute.SetMinMaxLength<{
         maxLength: 200;
       }>;
+  };
+}
+
+export interface AtomesSingleIconeCollaborateur extends Schema.Component {
+  collectionName: 'components_atomes_single_icone_collaborateurs';
+  info: {
+    displayName: 'single_icone_collaborateur';
+    description: '';
+  };
+  attributes: {
+    titre: Attribute.String;
+    sousTitre: Attribute.Text;
+    image: Attribute.Media;
+    auteur_citation: Attribute.String;
   };
 }
 
@@ -137,27 +166,34 @@ export interface MoleculesActionsVignettes extends Schema.Component {
   };
 }
 
-export interface MoleculesCitationComponent extends Schema.Component {
-  collectionName: 'components_widget_citation_components';
+export interface MoleculesAvisExpert extends Schema.Component {
+  collectionName: 'components_molecules_avis_experts';
   info: {
-    displayName: 'citationComponent';
+    displayName: 'avis_expert';
     description: '';
   };
   attributes: {
-    citation: Attribute.Component<'atomes.citation', true>;
-    heading: Attribute.Component<'atomes.heading', true>;
+    citation: Attribute.Text;
+    nom: Attribute.String;
+    source: Attribute.String;
+    photo: Attribute.Media;
+    background_color: Attribute.String;
   };
 }
 
-export interface MoleculesCommentobtenir extends Schema.Component {
-  collectionName: 'components_widget_commentobtenirs';
+export interface MoleculesBandeauTextePhoto extends Schema.Component {
+  collectionName: 'components_molecules_bandeau_texte_photos';
   info: {
-    displayName: 'commentobtenir';
+    displayName: 'Bandeau_texte_photo';
     description: '';
   };
   attributes: {
-    vignette: Attribute.Component<'atomes.vignette', true>;
-    heading: Attribute.Component<'atomes.heading'>;
+    titre: Attribute.String;
+    texte: Attribute.Text;
+    image: Attribute.Media;
+    CTA: Attribute.Component<'molecules.cta'>;
+    Position: Attribute.Enumeration<['texte_gauche', 'texte_droite']>;
+    background_color: Attribute.String;
   };
 }
 
@@ -172,7 +208,43 @@ export interface MoleculesContactForm extends Schema.Component {
     errorMessage: Attribute.String;
     missingFieldMessage: Attribute.String;
     formContent: Attribute.Component<'atomes.form_content'>;
-    heading: Attribute.Component<'atomes.heading', true>;
+    heading: Attribute.Component<'atomes.heading'>;
+    object_option: Attribute.Component<'atomes.raison', true>;
+  };
+}
+
+export interface MoleculesCta extends Schema.Component {
+  collectionName: 'components_molecules_ctas';
+  info: {
+    displayName: 'CTA';
+    description: '';
+  };
+  attributes: {
+    texte: Attribute.String;
+    link: Attribute.String;
+    attribut_title: Attribute.String;
+    Ouvrir_dans_une_nouvelle_fenetre: Attribute.Boolean &
+      Attribute.DefaultTo<true>;
+  };
+}
+
+export interface MoleculesModulePictoTrombi extends Schema.Component {
+  collectionName: 'components_molecules_module_picto_trombis';
+  info: {
+    displayName: 'module_picto_trombi';
+    description: '';
+  };
+  attributes: {
+    titre: Attribute.String;
+    sousTitre: Attribute.String;
+    module_picto_collaborateur: Attribute.Component<
+      'atomes.single-icone-collaborateur',
+      true
+    >;
+    type: Attribute.Enumeration<['Icone', 'Collaborateur', 'Citations']>;
+    Body_section: Attribute.Blocks;
+    titre_icons_group: Attribute.String;
+    background_color: Attribute.String;
   };
 }
 
@@ -189,6 +261,7 @@ export interface MoleculesPartenariats extends Schema.Component {
       'oneToMany',
       'api::partenaire.partenaire'
     >;
+    background_color: Attribute.String;
   };
 }
 
@@ -233,42 +306,6 @@ export interface MoleculesPersonnalisationForm extends Schema.Component {
   };
 }
 
-export interface MoleculesPersonnalisation extends Schema.Component {
-  collectionName: 'components_widget_personnalisations';
-  info: {
-    displayName: 'exemplePersonnalisation';
-    description: '';
-  };
-  attributes: {
-    titre: Attribute.String;
-    imageAndLink: Attribute.Component<'atomes.imageandlink', true>;
-  };
-}
-
-export interface MoleculesPourquoiEf1 extends Schema.Component {
-  collectionName: 'components_widget_pourquoi_ef_1s';
-  info: {
-    displayName: 'pourquoiEF1';
-    description: '';
-  };
-  attributes: {
-    titre: Attribute.String;
-    raison: Attribute.Component<'atomes.raison', true>;
-  };
-}
-
-export interface MoleculesPrincipe extends Schema.Component {
-  collectionName: 'components_widget_principes';
-  info: {
-    displayName: 'principe';
-    description: '';
-  };
-  attributes: {
-    raison: Attribute.Component<'atomes.raison', true>;
-    heading: Attribute.Component<'atomes.heading'>;
-  };
-}
-
 export interface MoleculesSomeActions extends Schema.Component {
   collectionName: 'components_molecules_some_actions';
   info: {
@@ -301,18 +338,19 @@ declare module '@strapi/types' {
       'atomes.heading': AtomesHeading;
       'atomes.imageandlink': AtomesImageandlink;
       'atomes.input-form': AtomesInputForm;
+      'atomes.module-photo-video': AtomesModulePhotoVideo;
       'atomes.numerotation': AtomesNumerotation;
       'atomes.raison': AtomesRaison;
+      'atomes.single-icone-collaborateur': AtomesSingleIconeCollaborateur;
       'atomes.vignette': AtomesVignette;
       'molecules.actions-vignettes': MoleculesActionsVignettes;
-      'molecules.citation-component': MoleculesCitationComponent;
-      'molecules.commentobtenir': MoleculesCommentobtenir;
+      'molecules.avis-expert': MoleculesAvisExpert;
+      'molecules.bandeau-texte-photo': MoleculesBandeauTextePhoto;
       'molecules.contact-form': MoleculesContactForm;
+      'molecules.cta': MoleculesCta;
+      'molecules.module-picto-trombi': MoleculesModulePictoTrombi;
       'molecules.partenariats': MoleculesPartenariats;
       'molecules.personnalisation-form': MoleculesPersonnalisationForm;
-      'molecules.personnalisation': MoleculesPersonnalisation;
-      'molecules.pourquoi-ef-1': MoleculesPourquoiEf1;
-      'molecules.principe': MoleculesPrincipe;
       'molecules.some-actions': MoleculesSomeActions;
       'molecules.vignette-component': MoleculesVignetteComponent;
     }

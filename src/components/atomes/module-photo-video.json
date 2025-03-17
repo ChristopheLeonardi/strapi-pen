@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_atomes_module_photo_videos",
+  "info": {
+    "displayName": "module_photo_video",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "Avis_expert": {
+      "type": "component",
+      "repeatable": true,
+      "component": "molecules.avis-expert"
+    },
+    "background_color": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkstrapi_pen=self.webpackChunkstrapi_pen||[]).push([[5536],{65536:e=>{e.exports=JSON.parse('{"form.button.draft":"Open draft preview","form.button.published":"Open live view","form.button.copy-link":"Copy link","form.button.copy-link.draft":"Copy preview link","notification.success.link-copied":"Link copied to the clipboard"}')}}]);

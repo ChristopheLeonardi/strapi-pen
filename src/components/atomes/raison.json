@@ -6,8 +6,8 @@
   },
   "options": {},
   "attributes": {
-    "argument": {
-      "type": "text",
+    "texte": {
+      "type": "string",
       "maxLength": 200
     }
   }

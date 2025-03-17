@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_atomes_single_icone_collaborateurs",
+  "info": {
+    "displayName": "single_icone_collaborateur",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "sousTitre": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "auteur_citation": {
+      "type": "string"
+    }
+  }
+}

@@ -805,12 +805,6 @@ export interface ApiAboutAbout extends Schema.SingleType {
     };
   };
   attributes: {
-    entete: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     titre: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -829,19 +823,31 @@ export interface ApiAboutAbout extends Schema.SingleType {
           localized: true;
         };
       }>;
-    partenariats: Attribute.Component<'molecules.partenariats'> &
+    Body_section: Attribute.Component<'molecules.module-picto-trombi', true> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    contact: Attribute.Component<'molecules.contact-form'> &
+    Partenaires: Attribute.Component<'molecules.partenariats'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    ef1_link: Attribute.Component<'atomes.button'> &
+    End_section: Attribute.Component<'molecules.module-picto-trombi'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CTA: Attribute.Component<'molecules.cta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    background_color_principal: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -888,25 +894,7 @@ export interface ApiAccueilAccueil extends Schema.SingleType {
     };
   };
   attributes: {
-    Heading: Attribute.Component<'atomes.heading'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    ImageEntete: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    citation: Attribute.Component<'atomes.citation'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    diaporama: Attribute.Media &
+    entete_image: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -918,22 +906,40 @@ export interface ApiAccueilAccueil extends Schema.SingleType {
           localized: true;
         };
       }>;
-    vignettesSection: Attribute.Component<
-      'molecules.vignette-component',
+    titre: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    sousTitre: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    text_position: Attribute.Enumeration<['left', 'right', 'center']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CTA_entete: Attribute.Component<'molecules.cta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CTA_bas_de_page: Attribute.Component<'molecules.cta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Bandeau_Texte_Photo: Attribute.Component<
+      'molecules.bandeau-texte-photo',
       true
     > &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    partenariats: Attribute.Component<'molecules.partenariats'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    actionsVignettes: Attribute.Component<'molecules.actions-vignettes'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -963,12 +969,12 @@ export interface ApiAccueilAccueil extends Schema.SingleType {
   };
 }
 
-export interface ApiActionAction extends Schema.SingleType {
+export interface ApiActionAction extends Schema.CollectionType {
   collectionName: 'actions';
   info: {
     singularName: 'action';
     pluralName: 'actions';
-    displayName: 'action';
+    displayName: 'Actions';
     description: '';
   };
   options: {
@@ -986,37 +992,37 @@ export interface ApiActionAction extends Schema.SingleType {
           localized: true;
         };
       }>;
+    slug: Attribute.UID<'api::action.action', 'titre'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    entete_image: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     sousTitre: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    entete: Attribute.Media &
+    modules_media: Attribute.Component<'atomes.module-photo-video', true> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    icone: Attribute.Media &
+    background_color_principal: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    presentation: Attribute.Blocks &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    diaporama: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    lesActions: Attribute.Component<'atomes.heading'> &
+    CTA: Attribute.Component<'molecules.cta'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1124,9 +1130,6 @@ export interface ApiConfigurationConfiguration extends Schema.CollectionType {
   };
   attributes: {
     logo: Attribute.Media & Attribute.Required;
-    pictoeducation: Attribute.Media;
-    pictofederation: Attribute.Media;
-    pictoaction: Attribute.Media;
     pagesNavigation: Attribute.JSON & Attribute.Required;
     LanguesDisponibles: Attribute.JSON &
       Attribute.CustomField<
@@ -1135,6 +1138,10 @@ export interface ApiConfigurationConfiguration extends Schema.CollectionType {
       >;
     traduction: Attribute.JSON;
     noCookie: Attribute.Text;
+    Navigation_color: Attribute.String & Attribute.DefaultTo<'#fff'>;
+    adresse: Attribute.Text;
+    Phone_number: Attribute.String;
+    background_color: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1153,12 +1160,12 @@ export interface ApiConfigurationConfiguration extends Schema.CollectionType {
   };
 }
 
-export interface ApiEducationEducation extends Schema.SingleType {
-  collectionName: 'educations';
+export interface ApiContactContact extends Schema.SingleType {
+  collectionName: 'contacts';
   info: {
-    singularName: 'education';
-    pluralName: 'educations';
-    displayName: 'education';
+    singularName: 'contact';
+    pluralName: 'contacts';
+    displayName: 'Contact';
     description: '';
   };
   options: {
@@ -1170,37 +1177,26 @@ export interface ApiEducationEducation extends Schema.SingleType {
     };
   };
   attributes: {
+    Texte: Attribute.Blocks &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Contact_form: Attribute.Component<'molecules.contact-form'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     titre: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    sousTitre: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    entete: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    icone: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    diaporama: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    presentation: Attribute.Blocks &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1210,98 +1206,21 @@ export interface ApiEducationEducation extends Schema.SingleType {
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::education.education',
+      'api::contact.contact',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::education.education',
+      'api::contact.contact',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     localizations: Attribute.Relation<
-      'api::education.education',
+      'api::contact.contact',
       'oneToMany',
-      'api::education.education'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiFedererFederer extends Schema.SingleType {
-  collectionName: 'federers';
-  info: {
-    singularName: 'federer';
-    pluralName: 'federers';
-    displayName: 'federer';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    titre: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    sousTitre: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    entete: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    icone: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    diaporama: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    presentation: Attribute.Blocks &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::federer.federer',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::federer.federer',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::federer.federer',
-      'oneToMany',
-      'api::federer.federer'
+      'api::contact.contact'
     >;
     locale: Attribute.String;
   };
@@ -1330,6 +1249,92 @@ export interface ApiFlagpersoFlagperso extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::flagperso.flagperso',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMentionLegaleMentionLegale extends Schema.SingleType {
+  collectionName: 'mentions_legales';
+  info: {
+    singularName: 'mention-legale';
+    pluralName: 'mentions-legales';
+    displayName: 'Mentions_legales';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Texte: Attribute.Blocks &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::mention-legale.mention-legale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::mention-legale.mention-legale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::mention-legale.mention-legale',
+      'oneToMany',
+      'api::mention-legale.mention-legale'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiNosActionsNosActions extends Schema.SingleType {
+  collectionName: 'nos_action';
+  info: {
+    singularName: 'nos-actions';
+    pluralName: 'nos-action';
+    displayName: 'Nos_actions';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    body: Attribute.Blocks;
+    actions: Attribute.Relation<
+      'api::nos-actions.nos-actions',
+      'oneToMany',
+      'api::action.action'
+    >;
+    CTA: Attribute.Component<'molecules.cta'>;
+    titre_section_actions: Attribute.String;
+    bouton_see_more: Attribute.Component<'atomes.button'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::nos-actions.nos-actions',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::nos-actions.nos-actions',
       'oneToOne',
       'admin::user'
     > &
@@ -1382,6 +1387,7 @@ export interface ApiRequestRequest extends Schema.CollectionType {
     nom: Attribute.String;
     email: Attribute.Email;
     message: Attribute.Text;
+    objet: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1417,107 +1423,19 @@ export interface ApiSingleActionSingleAction extends Schema.CollectionType {
     };
   };
   attributes: {
-    titre: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    sousTitre: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    presentation: Attribute.Blocks &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     template: Attribute.Enumeration<['simple', 'ef1']> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    entete: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    diaporama: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    video: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    domaine: Attribute.JSON &
-      Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        ['action', 'federer', 'education']
-      > &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Personnalisation: Attribute.Component<'molecules.personnalisation'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    CommentObtenir: Attribute.Component<'molecules.commentobtenir'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    principe: Attribute.Component<'molecules.principe'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    pourquoiEF1: Attribute.Component<'molecules.pourquoi-ef-1'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    citation: Attribute.Component<'molecules.citation-component'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    slug: Attribute.UID<'api::single-action.single-action', 'titre'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    quelquesAction: Attribute.Component<'atomes.heading'> &
+    slug: Attribute.UID &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     PersonnalisationForm: Attribute.Component<'molecules.personnalisation-form'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    linkButton: Attribute.Component<'atomes.button'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1576,9 +1494,10 @@ declare module '@strapi/types' {
       'api::action.action': ApiActionAction;
       'api::agenda.agenda': ApiAgendaAgenda;
       'api::configuration.configuration': ApiConfigurationConfiguration;
-      'api::education.education': ApiEducationEducation;
-      'api::federer.federer': ApiFedererFederer;
+      'api::contact.contact': ApiContactContact;
       'api::flagperso.flagperso': ApiFlagpersoFlagperso;
+      'api::mention-legale.mention-legale': ApiMentionLegaleMentionLegale;
+      'api::nos-actions.nos-actions': ApiNosActionsNosActions;
       'api::partenaire.partenaire': ApiPartenairePartenaire;
       'api::request.request': ApiRequestRequest;
       'api::single-action.single-action': ApiSingleActionSingleAction;

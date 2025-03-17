@@ -1,22 +1,25 @@
 {
-    "collectionName": "components_atomes_form_contents",
-    "info": {
-      "displayName": "formContent",
-      "description": ""
+  "collectionName": "components_atomes_form_contents",
+  "info": {
+    "displayName": "formContent",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "nameLabel": {
+      "type": "string"
     },
-    "options": {},
-    "attributes": {
-      "nameLabel": {
-        "type": "string"
-      },
-      "messageLabel": {
-        "type": "text"
-      },
-      "submitLabel": {
-        "type": "string"
-      },
-      "emailLabel": {
-        "type": "string"
-      }
+    "messageLabel": {
+      "type": "text"
+    },
+    "submitLabel": {
+      "type": "string"
+    },
+    "emailLabel": {
+      "type": "string"
+    },
+    "first_name": {
+      "type": "string"
     }
   }
+}

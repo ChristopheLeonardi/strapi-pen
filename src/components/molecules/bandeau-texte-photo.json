@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_molecules_bandeau_texte_photos",
+  "info": {
+    "displayName": "Bandeau_texte_photo",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "texte": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "CTA": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.cta"
+    },
+    "Position": {
+      "type": "enumeration",
+      "enum": [
+        "texte_gauche",
+        "texte_droite"
+      ]
+    },
+    "background_color": {
+      "type": "string"
+    }
+  }
+}

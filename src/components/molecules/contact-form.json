@@ -22,8 +22,13 @@
     },
     "heading": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "atomes.heading"
+    },
+    "object_option": {
+      "type": "component",
+      "repeatable": true,
+      "component": "atomes.raison"
     }
   }
 }

@@ -15,6 +15,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::partenaire.partenaire"
+    },
+    "background_color": {
+      "type": "string"
     }
   }
 }

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_molecules_ctas",
+  "info": {
+    "displayName": "CTA",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "texte": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "attribut_title": {
+      "type": "string"
+    },
+    "Ouvrir_dans_une_nouvelle_fenetre": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

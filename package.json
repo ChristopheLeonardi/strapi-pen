@@ -26,6 +26,7 @@
     "strapi-plugin-multi-select": "^1.2.3",
     "strapi-plugin-plausible": "^1.0.7",
     "strapi-plugin-populate-deep": "^3.0.1",
+    "strapi-plugin-preview-button": "^2.2.2",
     "strapi-provider-email-smtp": "^1.0.3",
     "styled-components": "5.3.3"
   },

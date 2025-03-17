@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "nos_action",
+  "info": {
+    "singularName": "nos-actions",
+    "pluralName": "nos-action",
+    "displayName": "Nos_actions",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "actions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::action.action"
+    },
+    "CTA": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.cta"
+    },
+    "titre_section_actions": {
+      "type": "string"
+    },
+    "bouton_see_more": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atomes.button"
+    }
+  }
+}
