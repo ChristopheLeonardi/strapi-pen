@@ -853,6 +853,12 @@ export interface ApiAboutAbout extends Schema.SingleType {
           localized: true;
         };
       }>;
+    slug: Attribute.UID &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -940,6 +946,12 @@ export interface ApiAccueilAccueil extends Schema.SingleType {
       'molecules.bandeau-texte-photo',
       true
     > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1262,6 +1274,7 @@ export interface ApiMentionLegaleMentionLegale extends Schema.SingleType {
     singularName: 'mention-legale';
     pluralName: 'mentions-legales';
     displayName: 'Mentions_legales';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1273,6 +1286,12 @@ export interface ApiMentionLegaleMentionLegale extends Schema.SingleType {
   };
   attributes: {
     Texte: Attribute.Blocks &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1324,6 +1343,7 @@ export interface ApiNosActionsNosActions extends Schema.SingleType {
     CTA: Attribute.Component<'molecules.cta'>;
     titre_section_actions: Attribute.String;
     bouton_see_more: Attribute.Component<'atomes.button'>;
+    slug: Attribute.UID;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

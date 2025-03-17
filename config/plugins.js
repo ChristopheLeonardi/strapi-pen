@@ -80,6 +80,90 @@ module.exports = ({ env }) => ({
             openTarget: '_blank',
           },
         },
+        {
+          uid: 'api::contact.contact',
+          draft: {
+            url: 'http://localhost:5173/preview',
+            query: {
+              type: 'contact',
+              entryId: '{id}',
+              secret: env('STRAPI_PREVIEW_SECRET'),
+            },
+            openTarget: '_blank',
+          },
+          published: {
+            url: 'http://localhost:5173/preview',
+            query: {
+              type: 'contact',
+              entryId: '{id}',
+              secret: env('STRAPI_PREVIEW_SECRET'),
+            },
+            openTarget: '_blank',
+          },
+        },
+        {
+          uid: 'api::nos-actions.nos-actions',
+          draft: {
+            url: 'http://localhost:5173/preview',
+            query: {
+              type: 'nos-actions',
+              entryId: '{id}',
+              secret: env('STRAPI_PREVIEW_SECRET'),
+            },
+            openTarget: '_blank',
+          },
+          published: {
+            url: 'http://localhost:5173/preview',
+            query: {
+              type: 'nos-actions',
+              entryId: '{id}',
+              secret: env('STRAPI_PREVIEW_SECRET'),
+            },
+            openTarget: '_blank',
+          },
+        },
+        {
+          uid: 'api::mention-legale.mention-legale',
+          draft: {
+            url: 'http://localhost:5173/preview',
+            query: {
+              type: 'mention-legale',
+              entryId: '{id}',
+              secret: env('STRAPI_PREVIEW_SECRET'),
+            },
+            openTarget: '_blank',
+          },
+          published: {
+            url: 'http://localhost:5173/preview',
+            query: {
+              type: 'mention-legale',
+              entryId: '{id}',
+              secret: env('STRAPI_PREVIEW_SECRET'),
+            },
+            openTarget: '_blank',
+          },
+        },
+        {
+          uid: 'api::action.action',
+          draft: {
+            url: 'http://localhost:5173/preview',
+            query: {
+              type: 'action',
+              entryId: '{id}',
+              secret: env('STRAPI_PREVIEW_SECRET'),
+            },
+            openTarget: '_blank',
+          },
+          published: {
+            url: 'http://localhost:5173/preview',
+            query: {
+              type: 'action',
+              entryId: '{id}',
+              secret: env('STRAPI_PREVIEW_SECRET'),
+            },
+            openTarget: '_blank',
+          },
+        }
       ],
     },
   },

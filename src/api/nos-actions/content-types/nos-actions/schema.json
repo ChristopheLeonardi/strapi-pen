@@ -35,6 +35,9 @@
       "type": "component",
       "repeatable": false,
       "component": "atomes.button"
+    },
+    "slug": {
+      "type": "uid"
     }
   }
 }
