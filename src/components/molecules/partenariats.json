@@ -11,13 +11,13 @@
       "repeatable": false,
       "component": "atomes.heading"
     },
+    "background_color": {
+      "type": "string"
+    },
     "partenaires": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::partenaire.partenaire"
-    },
-    "background_color": {
-      "type": "string"
     }
   }
 }

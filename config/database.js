@@ -7,7 +7,7 @@ module.exports = ({ env }) => {
     mysql: {
       connection: {
         connectionString: env('DATABASE_URL'),
-        host: env('DATABASE_HOST', 'localhost'),
+        host: env('DATABASE_HOST', 'http://localhost'),
         port: env.int('DATABASE_PORT', 3306),
         database: env('DATABASE_NAME', 'strapi'),
         user: env('DATABASE_USERNAME', 'strapi'),
@@ -24,11 +24,11 @@ module.exports = ({ env }) => {
           ),
         },
       },
-      pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
+      pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 30) },
     },
     mysql2: {
       connection: {
-        host: env('DATABASE_HOST', 'localhost'),
+        host: env('DATABASE_HOST', 'http://localhost'),
         port: env.int('DATABASE_PORT', 3306),
         database: env('DATABASE_NAME', 'strapi'),
         user: env('DATABASE_USERNAME', 'strapi'),
@@ -45,12 +45,12 @@ module.exports = ({ env }) => {
           ),
         },
       },
-      pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
+      pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 30) },
     },
     postgres: {
       connection: {
         connectionString: env('DATABASE_URL'),
-        host: env('DATABASE_HOST', 'localhost'),
+        host: env('DATABASE_HOST', 'http://localhost'),
         port: env.int('DATABASE_PORT', 5432),
         database: env('DATABASE_NAME', 'strapi'),
         user: env('DATABASE_USERNAME', 'strapi'),
@@ -68,7 +68,7 @@ module.exports = ({ env }) => {
         },
         schema: env('DATABASE_SCHEMA', 'public'),
       },
-      pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
+      pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 30) },
     },
     sqlite: {
       connection: {
@@ -86,7 +86,7 @@ module.exports = ({ env }) => {
     connection: {
       client,
       ...connections[client],
-      acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 60000),
+      acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 120000),
     },
   };
 };

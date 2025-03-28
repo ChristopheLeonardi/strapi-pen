@@ -86,6 +86,7 @@ export interface AtomesModulePhotoVideo extends Schema.Component {
     body: Attribute.Blocks;
     Avis_expert: Attribute.Component<'molecules.avis-expert', true>;
     background_color: Attribute.String;
+    paragraph_color: Attribute.String;
   };
 }
 
@@ -194,6 +195,8 @@ export interface MoleculesBandeauTextePhoto extends Schema.Component {
     CTA: Attribute.Component<'molecules.cta'>;
     Position: Attribute.Enumeration<['texte_gauche', 'texte_droite']>;
     background_color: Attribute.String;
+    title_color: Attribute.String;
+    paragraph_color: Attribute.String;
   };
 }
 
@@ -225,6 +228,10 @@ export interface MoleculesCta extends Schema.Component {
     attribut_title: Attribute.String;
     Ouvrir_dans_une_nouvelle_fenetre: Attribute.Boolean &
       Attribute.DefaultTo<true>;
+    background_color: Attribute.String;
+    font_color: Attribute.String;
+    hover_background_color: Attribute.String;
+    hover_font_color: Attribute.String;
   };
 }
 
@@ -245,6 +252,8 @@ export interface MoleculesModulePictoTrombi extends Schema.Component {
     Body_section: Attribute.Blocks;
     titre_icons_group: Attribute.String;
     background_color: Attribute.String;
+    heading_color: Attribute.String;
+    paragraph_color: Attribute.Text;
   };
 }
 
@@ -256,12 +265,12 @@ export interface MoleculesPartenariats extends Schema.Component {
   };
   attributes: {
     heading: Attribute.Component<'atomes.heading'>;
+    background_color: Attribute.String;
     partenaires: Attribute.Relation<
       'molecules.partenariats',
       'oneToMany',
       'api::partenaire.partenaire'
     >;
-    background_color: Attribute.String;
   };
 }
 

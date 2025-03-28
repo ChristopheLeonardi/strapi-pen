@@ -4,7 +4,7 @@
   "info": {
     "singularName": "about",
     "pluralName": "abouts",
-    "displayName": "about",
+    "displayName": "Qui_sommes_nous",
     "description": ""
   },
   "options": {
@@ -17,14 +17,6 @@
   },
   "attributes": {
     "titre": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string"
-    },
-    "sousTitre": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -95,6 +87,51 @@
         }
       },
       "type": "uid"
+    },
+    "text_position": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right",
+        "center"
+      ]
+    },
+    "entete_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "entete_color": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "entete_background_color": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

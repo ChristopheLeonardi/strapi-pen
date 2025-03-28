@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "logo": {
+    "logo_header_fr": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -54,6 +54,42 @@
     "background_color": {
       "type": "string",
       "regex": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
+    },
+    "logo_header_en": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "logo_footer_fr": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "logo_footer_en": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "profil_instagram": {
+      "type": "string"
+    },
+    "profil_linkedin": {
+      "type": "string"
     }
   }
 }

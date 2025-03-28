@@ -103,6 +103,22 @@
         }
       },
       "type": "uid"
+    },
+    "entete_color": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "entete_background_color": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

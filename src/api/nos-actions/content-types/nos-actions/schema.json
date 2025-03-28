@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "titre": {
       "type": "string"
     },
     "body": {
@@ -38,6 +38,34 @@
     },
     "slug": {
       "type": "uid"
+    },
+    "sousTitre": {
+      "type": "text"
+    },
+    "entete_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "text_position": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right",
+        "center"
+      ]
+    },
+    "entete_color": {
+      "type": "string"
+    },
+    "entete_background_color": {
+      "type": "string"
     }
   }
 }

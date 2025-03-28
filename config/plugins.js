@@ -13,7 +13,7 @@ module.exports = ({ env }) => ({
     config: {
       provider: 'strapi-provider-email-smtp',
       providerOptions: {
-        host: 'localhost',
+        host: 'http://localhost',
         port: 25,
         secure: false, // true pour port 465, false pour les autres ports
         auth: {
@@ -41,7 +41,7 @@ module.exports = ({ env }) => ({
         {
           uid: 'api::accueil.accueil',
           draft: {
-            url: 'http://localhost:5173/preview',
+            url: 'http://localhost:5176/preview',
             query: {
               type: 'accueil',
               entryId: '{id}', // Passer l'ID du contenu
@@ -50,7 +50,7 @@ module.exports = ({ env }) => ({
             openTarget: '_blank',
           },
           published: {
-            url: 'http://localhost:5173/preview',
+            url: 'http://localhost:5176/preview',
             query: {
               type: 'accueil',
               entryId: '{id}',
@@ -62,7 +62,7 @@ module.exports = ({ env }) => ({
         {
           uid: 'api::about.about',
           draft: {
-            url: 'http://localhost:5173/preview',
+            url: 'http://localhost:5176/preview',
             query: {
               type: 'about',
               entryId: '{id}',
@@ -71,7 +71,7 @@ module.exports = ({ env }) => ({
             openTarget: '_blank',
           },
           published: {
-            url: 'http://localhost:5173/preview',
+            url: 'http://localhost:5176/preview',
             query: {
               type: 'about',
               entryId: '{id}',
@@ -83,7 +83,7 @@ module.exports = ({ env }) => ({
         {
           uid: 'api::contact.contact',
           draft: {
-            url: 'http://localhost:5173/preview',
+            url: 'http://localhost:5176/preview',
             query: {
               type: 'contact',
               entryId: '{id}',
@@ -92,7 +92,7 @@ module.exports = ({ env }) => ({
             openTarget: '_blank',
           },
           published: {
-            url: 'http://localhost:5173/preview',
+            url: 'http://localhost:5176/preview',
             query: {
               type: 'contact',
               entryId: '{id}',
@@ -104,7 +104,7 @@ module.exports = ({ env }) => ({
         {
           uid: 'api::nos-actions.nos-actions',
           draft: {
-            url: 'http://localhost:5173/preview',
+            url: 'http://localhost:5176/preview',
             query: {
               type: 'nos-actions',
               entryId: '{id}',
@@ -113,7 +113,7 @@ module.exports = ({ env }) => ({
             openTarget: '_blank',
           },
           published: {
-            url: 'http://localhost:5173/preview',
+            url: 'http://localhost:5176/preview',
             query: {
               type: 'nos-actions',
               entryId: '{id}',
@@ -125,7 +125,7 @@ module.exports = ({ env }) => ({
         {
           uid: 'api::mention-legale.mention-legale',
           draft: {
-            url: 'http://localhost:5173/preview',
+            url: 'http://localhost:5176/preview',
             query: {
               type: 'mention-legale',
               entryId: '{id}',
@@ -134,7 +134,7 @@ module.exports = ({ env }) => ({
             openTarget: '_blank',
           },
           published: {
-            url: 'http://localhost:5173/preview',
+            url: 'http://localhost:5176/preview',
             query: {
               type: 'mention-legale',
               entryId: '{id}',
@@ -146,7 +146,7 @@ module.exports = ({ env }) => ({
         {
           uid: 'api::action.action',
           draft: {
-            url: 'http://localhost:5173/preview',
+            url: 'http://localhost:5176/preview',
             query: {
               type: 'action',
               entryId: '{id}',
@@ -155,7 +155,7 @@ module.exports = ({ env }) => ({
             openTarget: '_blank',
           },
           published: {
-            url: 'http://localhost:5173/preview',
+            url: 'http://localhost:5176/preview',
             query: {
               type: 'action',
               entryId: '{id}',

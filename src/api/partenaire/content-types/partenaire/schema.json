@@ -4,7 +4,8 @@
   "info": {
     "singularName": "partenaire",
     "pluralName": "partenaires",
-    "displayName": "partenaire"
+    "displayName": "partenaire",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,9 @@
       "type": "component",
       "repeatable": false,
       "component": "atomes.imageandlink"
+    },
+    "nom": {
+      "type": "string"
     }
   }
 }

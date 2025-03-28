@@ -793,7 +793,7 @@ export interface ApiAboutAbout extends Schema.SingleType {
   info: {
     singularName: 'about';
     pluralName: 'abouts';
-    displayName: 'about';
+    displayName: 'Qui_sommes_nous';
     description: '';
   };
   options: {
@@ -806,12 +806,6 @@ export interface ApiAboutAbout extends Schema.SingleType {
   };
   attributes: {
     titre: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    sousTitre: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -854,6 +848,30 @@ export interface ApiAboutAbout extends Schema.SingleType {
         };
       }>;
     slug: Attribute.UID &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    text_position: Attribute.Enumeration<['left', 'right', 'center']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    entete_image: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    entete_color: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    entete_background_color: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -957,6 +975,18 @@ export interface ApiAccueilAccueil extends Schema.SingleType {
           localized: true;
         };
       }>;
+    entete_color: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    entete_background_color: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1035,6 +1065,12 @@ export interface ApiActionAction extends Schema.CollectionType {
         };
       }>;
     CTA: Attribute.Component<'molecules.cta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    remplacement_lien_auto: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1141,7 +1177,7 @@ export interface ApiConfigurationConfiguration extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    logo: Attribute.Media & Attribute.Required;
+    logo_header_fr: Attribute.Media & Attribute.Required;
     pagesNavigation: Attribute.JSON & Attribute.Required;
     LanguesDisponibles: Attribute.JSON &
       Attribute.CustomField<
@@ -1154,6 +1190,11 @@ export interface ApiConfigurationConfiguration extends Schema.CollectionType {
     adresse: Attribute.Text;
     Phone_number: Attribute.String;
     background_color: Attribute.String;
+    logo_header_en: Attribute.Media;
+    logo_footer_fr: Attribute.Media;
+    logo_footer_en: Attribute.Media;
+    profil_instagram: Attribute.String;
+    profil_linkedin: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1209,6 +1250,36 @@ export interface ApiContactContact extends Schema.SingleType {
       }>;
     titre: Attribute.String &
       Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    sousTitre: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    entete_image: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    text_position: Attribute.Enumeration<['left', 'right', 'center']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    entete_color: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    entete_background_color: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1333,7 +1404,7 @@ export interface ApiNosActionsNosActions extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
+    titre: Attribute.String;
     body: Attribute.Blocks;
     actions: Attribute.Relation<
       'api::nos-actions.nos-actions',
@@ -1344,6 +1415,11 @@ export interface ApiNosActionsNosActions extends Schema.SingleType {
     titre_section_actions: Attribute.String;
     bouton_see_more: Attribute.Component<'atomes.button'>;
     slug: Attribute.UID;
+    sousTitre: Attribute.Text;
+    entete_image: Attribute.Media;
+    text_position: Attribute.Enumeration<['left', 'right', 'center']>;
+    entete_color: Attribute.String;
+    entete_background_color: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1368,12 +1444,14 @@ export interface ApiPartenairePartenaire extends Schema.CollectionType {
     singularName: 'partenaire';
     pluralName: 'partenaires';
     displayName: 'partenaire';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     imageAndLink: Attribute.Component<'atomes.imageandlink'>;
+    nom: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

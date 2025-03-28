@@ -84,6 +84,14 @@
         }
       },
       "component": "molecules.cta"
+    },
+    "remplacement_lien_auto": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

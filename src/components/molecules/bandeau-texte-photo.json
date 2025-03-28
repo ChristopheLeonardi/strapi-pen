@@ -37,6 +37,12 @@
     },
     "background_color": {
       "type": "string"
+    },
+    "title_color": {
+      "type": "string"
+    },
+    "paragraph_color": {
+      "type": "string"
     }
   }
 }

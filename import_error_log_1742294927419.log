@@ -1,0 +1,1 @@
+[ERROR] insert into `components_widget_partenariats_partenaires_links` (`partenaire_id`, `partenaire_order`, `partenariats_id`) values (4, 3, 1) - UNIQUE constraint failed: components_widget_partenariats_partenaires_links.partenariats_id, components_widget_partenariats_partenaires_links.partenaire_id
