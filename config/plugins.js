@@ -35,6 +35,7 @@ module.exports = ({ env }) => ({
       sharedLink: "https://plausible.io/share/planetearthnow.org?auth=CTCm6L11KFybgmnOVNr6u"
     }
   },
+  
   'preview-button': {
     config: {
       contentTypes: [

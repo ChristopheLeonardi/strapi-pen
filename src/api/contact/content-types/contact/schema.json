@@ -103,6 +103,18 @@
         }
       },
       "type": "string"
+    },
+    "Texte_2": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5video.CKEditor5Video"
     }
   }
 }

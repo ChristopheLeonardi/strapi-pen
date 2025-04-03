@@ -39,6 +39,13 @@
     },
     "paragraph_color": {
       "type": "text"
+    },
+    "Body_section_2": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5video.CKEditor5Video"
     }
   }
 }

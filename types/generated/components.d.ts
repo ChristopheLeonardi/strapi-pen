@@ -1,10 +1,10 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Attribute, Schema } from '@strapi/strapi';
 
 export interface AtomesButton extends Schema.Component {
   collectionName: 'components_atomes_buttons';
   info: {
-    displayName: 'button';
     description: '';
+    displayName: 'button';
   };
   attributes: {
     buttonLabel: Attribute.String;
@@ -16,27 +16,27 @@ export interface AtomesButton extends Schema.Component {
 export interface AtomesCitation extends Schema.Component {
   collectionName: 'components_widget_citations';
   info: {
-    displayName: 'citation';
     description: '';
+    displayName: 'citation';
   };
   attributes: {
-    citation: Attribute.Text;
     auteur: Attribute.String;
+    citation: Attribute.Text;
   };
 }
 
 export interface AtomesFormContent extends Schema.Component {
   collectionName: 'components_atomes_form_contents';
   info: {
-    displayName: 'formContent';
     description: '';
+    displayName: 'formContent';
   };
   attributes: {
-    nameLabel: Attribute.String;
-    messageLabel: Attribute.Text;
-    submitLabel: Attribute.String;
     emailLabel: Attribute.String;
     first_name: Attribute.String;
+    messageLabel: Attribute.Text;
+    nameLabel: Attribute.String;
+    submitLabel: Attribute.String;
   };
 }
 
@@ -46,8 +46,8 @@ export interface AtomesHeading extends Schema.Component {
     displayName: 'heading';
   };
   attributes: {
-    titre: Attribute.String;
     sousTitre: Attribute.String;
+    titre: Attribute.String;
   };
 }
 
@@ -57,7 +57,7 @@ export interface AtomesImageandlink extends Schema.Component {
     displayName: 'imageAndLink';
   };
   attributes: {
-    image: Attribute.Media;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Lien: Attribute.String;
   };
 }
@@ -65,12 +65,12 @@ export interface AtomesImageandlink extends Schema.Component {
 export interface AtomesInputForm extends Schema.Component {
   collectionName: 'components_atomes_input_forms';
   info: {
-    displayName: 'InputLabel';
     description: '';
+    displayName: 'InputLabel';
   };
   attributes: {
-    label: Attribute.String;
     idAndName: Attribute.String;
+    label: Attribute.String;
     placeholder: Attribute.String;
   };
 }
@@ -78,14 +78,21 @@ export interface AtomesInputForm extends Schema.Component {
 export interface AtomesModulePhotoVideo extends Schema.Component {
   collectionName: 'components_atomes_module_photo_videos';
   info: {
-    displayName: 'module_photo_video';
     description: '';
+    displayName: 'module_photo_video';
   };
   attributes: {
-    media: Attribute.Media;
-    body: Attribute.Blocks;
     Avis_expert: Attribute.Component<'molecules.avis-expert', true>;
     background_color: Attribute.String;
+    body: Attribute.Blocks;
+    body_2: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5video.CKEditor5Video',
+        {
+          preset: 'toolbar';
+        }
+      >;
+    media: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     paragraph_color: Attribute.String;
   };
 }
@@ -93,8 +100,8 @@ export interface AtomesModulePhotoVideo extends Schema.Component {
 export interface AtomesNumerotation extends Schema.Component {
   collectionName: 'components_widget_numerotations';
   info: {
-    displayName: 'numerotation';
     description: '';
+    displayName: 'numerotation';
   };
   attributes: {
     number: Attribute.String;
@@ -108,8 +115,8 @@ export interface AtomesNumerotation extends Schema.Component {
 export interface AtomesRaison extends Schema.Component {
   collectionName: 'components_widget_raisons';
   info: {
-    displayName: 'TexteRepetable';
     description: '';
+    displayName: 'TexteRepetable';
   };
   attributes: {
     texte: Attribute.String &
@@ -122,32 +129,32 @@ export interface AtomesRaison extends Schema.Component {
 export interface AtomesSingleIconeCollaborateur extends Schema.Component {
   collectionName: 'components_atomes_single_icone_collaborateurs';
   info: {
-    displayName: 'single_icone_collaborateur';
     description: '';
+    displayName: 'single_icone_collaborateur';
   };
   attributes: {
-    titre: Attribute.String;
-    sousTitre: Attribute.Text;
-    image: Attribute.Media;
     auteur_citation: Attribute.String;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    sousTitre: Attribute.Text;
+    titre: Attribute.String;
   };
 }
 
 export interface AtomesVignette extends Schema.Component {
   collectionName: 'components_atomes_vignettes';
   info: {
-    displayName: 'vignette';
     description: '';
+    displayName: 'vignette';
   };
   attributes: {
-    titre: Attribute.String;
-    image: Attribute.Media;
+    buttonLabel: Attribute.String;
     description: Attribute.Text &
       Attribute.SetMinMaxLength<{
         maxLength: 150;
       }>;
+    image: Attribute.Media<'images'>;
     lien: Attribute.String;
-    buttonLabel: Attribute.String;
+    titre: Attribute.String;
     vocation: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
@@ -170,102 +177,109 @@ export interface MoleculesActionsVignettes extends Schema.Component {
 export interface MoleculesAvisExpert extends Schema.Component {
   collectionName: 'components_molecules_avis_experts';
   info: {
-    displayName: 'avis_expert';
     description: '';
+    displayName: 'avis_expert';
   };
   attributes: {
+    background_color: Attribute.String;
     citation: Attribute.Text;
     nom: Attribute.String;
+    photo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     source: Attribute.String;
-    photo: Attribute.Media;
-    background_color: Attribute.String;
   };
 }
 
 export interface MoleculesBandeauTextePhoto extends Schema.Component {
   collectionName: 'components_molecules_bandeau_texte_photos';
   info: {
-    displayName: 'Bandeau_texte_photo';
     description: '';
+    displayName: 'Bandeau_texte_photo';
   };
   attributes: {
-    titre: Attribute.String;
-    texte: Attribute.Text;
-    image: Attribute.Media;
-    CTA: Attribute.Component<'molecules.cta'>;
-    Position: Attribute.Enumeration<['texte_gauche', 'texte_droite']>;
     background_color: Attribute.String;
-    title_color: Attribute.String;
+    CTA: Attribute.Component<'molecules.cta'>;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     paragraph_color: Attribute.String;
+    Position: Attribute.Enumeration<['texte_gauche', 'texte_droite']>;
+    texte: Attribute.Text;
+    title_color: Attribute.String;
+    titre: Attribute.String;
   };
 }
 
 export interface MoleculesContactForm extends Schema.Component {
   collectionName: 'components_widget_contact_forms';
   info: {
-    displayName: 'contactForm';
     description: '';
+    displayName: 'contactForm';
   };
   attributes: {
-    successMessage: Attribute.String;
     errorMessage: Attribute.String;
-    missingFieldMessage: Attribute.String;
     formContent: Attribute.Component<'atomes.form_content'>;
     heading: Attribute.Component<'atomes.heading'>;
+    missingFieldMessage: Attribute.String;
     object_option: Attribute.Component<'atomes.raison', true>;
+    successMessage: Attribute.String;
   };
 }
 
 export interface MoleculesCta extends Schema.Component {
   collectionName: 'components_molecules_ctas';
   info: {
-    displayName: 'CTA';
     description: '';
+    displayName: 'CTA';
   };
   attributes: {
-    texte: Attribute.String;
-    link: Attribute.String;
     attribut_title: Attribute.String;
-    Ouvrir_dans_une_nouvelle_fenetre: Attribute.Boolean &
-      Attribute.DefaultTo<true>;
     background_color: Attribute.String;
     font_color: Attribute.String;
     hover_background_color: Attribute.String;
     hover_font_color: Attribute.String;
+    link: Attribute.String;
+    Ouvrir_dans_une_nouvelle_fenetre: Attribute.Boolean &
+      Attribute.DefaultTo<true>;
+    texte: Attribute.String;
   };
 }
 
 export interface MoleculesModulePictoTrombi extends Schema.Component {
   collectionName: 'components_molecules_module_picto_trombis';
   info: {
-    displayName: 'module_picto_trombi';
     description: '';
+    displayName: 'module_picto_trombi';
   };
   attributes: {
-    titre: Attribute.String;
-    sousTitre: Attribute.String;
+    background_color: Attribute.String;
+    Body_section: Attribute.Blocks;
+    Body_section_2: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5video.CKEditor5Video',
+        {
+          preset: 'toolbar';
+        }
+      >;
+    heading_color: Attribute.String;
     module_picto_collaborateur: Attribute.Component<
       'atomes.single-icone-collaborateur',
       true
     >;
-    type: Attribute.Enumeration<['Icone', 'Collaborateur', 'Citations']>;
-    Body_section: Attribute.Blocks;
-    titre_icons_group: Attribute.String;
-    background_color: Attribute.String;
-    heading_color: Attribute.String;
     paragraph_color: Attribute.Text;
+    sousTitre: Attribute.String;
+    titre: Attribute.String;
+    titre_icons_group: Attribute.String;
+    type: Attribute.Enumeration<['Icone', 'Collaborateur', 'Citations']>;
   };
 }
 
 export interface MoleculesPartenariats extends Schema.Component {
   collectionName: 'components_widget_partenariats';
   info: {
-    displayName: 'partenariats';
     description: '';
+    displayName: 'partenariats';
   };
   attributes: {
-    heading: Attribute.Component<'atomes.heading'>;
     background_color: Attribute.String;
+    heading: Attribute.Component<'atomes.heading'>;
     partenaires: Attribute.Relation<
       'molecules.partenariats',
       'oneToMany',
@@ -277,49 +291,51 @@ export interface MoleculesPartenariats extends Schema.Component {
 export interface MoleculesPersonnalisationForm extends Schema.Component {
   collectionName: 'components_molecules_personnalisation_forms';
   info: {
-    displayName: 'PersonnalisationForm';
     description: '';
+    displayName: 'PersonnalisationForm';
   };
   attributes: {
-    Heading: Attribute.Component<'atomes.heading'>;
-    typeLabel: Attribute.String;
-    typeOption: Attribute.Component<'atomes.input-form', true>;
-    orientationTitre: Attribute.String;
-    orientationOption: Attribute.Component<'atomes.input-form', true>;
-    sloganTitre: Attribute.String;
-    sloganInput: Attribute.Component<'atomes.input-form'>;
+    baseEfoPerso: Attribute.Media<'images'>;
+    baseEfoPersoVertical: Attribute.Media<'images'>;
+    baseEfoSlogan: Attribute.Media<'images'>;
+    baseEfoSloganVertical: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     CGV: Attribute.Component<'atomes.input-form'>;
-    uploadLabel: Attribute.String;
-    uploadTexte: Attribute.String;
-    submitButton: Attribute.Component<'atomes.button'>;
     createVerso: Attribute.Component<'atomes.button'>;
-    baseEfoSlogan: Attribute.Media;
-    baseEfoPerso: Attribute.Media;
-    lienGuide: Attribute.String;
+    Heading: Attribute.Component<'atomes.heading'>;
+    imageUploadTitle: Attribute.String;
+    lang: Attribute.String;
     lienCGV: Attribute.String;
+    lienGuide: Attribute.String;
+    orientationId: Attribute.String;
+    orientationOption: Attribute.Component<'atomes.input-form', true>;
+    orientationTitre: Attribute.String;
+    PersoCanvasSubtitle: Attribute.String;
+    PersoCanvasTitle: Attribute.String;
+    radioPlaneteId: Attribute.String;
+    radioPlanetelabels: Attribute.Component<'atomes.input-form', true>;
+    SloganCanvasSubtitle: Attribute.String;
+    SloganCanvasTitle: Attribute.String;
+    sloganInput: Attribute.Component<'atomes.input-form'>;
+    sloganTitre: Attribute.String;
+    submitButton: Attribute.Component<'atomes.button'>;
+    TextChoixDuFond: Attribute.Text;
     titreLienCGV: Attribute.String;
     titreLienGuide: Attribute.String;
-    baseEfoSloganVertical: Attribute.Media;
-    baseEfoPersoVertical: Attribute.Media;
-    TextChoixDuFond: Attribute.Text;
     typeId: Attribute.String;
-    orientationId: Attribute.String;
-    radioPlaneteId: Attribute.String;
-    imageUploadTitle: Attribute.String;
-    radioPlanetelabels: Attribute.Component<'atomes.input-form', true>;
-    SloganCanvasTitle: Attribute.String;
-    SloganCanvasSubtitle: Attribute.String;
-    PersoCanvasTitle: Attribute.String;
-    PersoCanvasSubtitle: Attribute.String;
-    lang: Attribute.String;
+    typeLabel: Attribute.String;
+    typeOption: Attribute.Component<'atomes.input-form', true>;
+    uploadLabel: Attribute.String;
+    uploadTexte: Attribute.String;
   };
 }
 
 export interface MoleculesSomeActions extends Schema.Component {
   collectionName: 'components_molecules_some_actions';
   info: {
-    displayName: 'someActions';
     description: '';
+    displayName: 'someActions';
   };
   attributes: {
     titrage: Attribute.Component<'atomes.heading', true>;
@@ -329,8 +345,8 @@ export interface MoleculesSomeActions extends Schema.Component {
 export interface MoleculesVignetteComponent extends Schema.Component {
   collectionName: 'components_molecules_vignette_components';
   info: {
-    displayName: 'VignetteComponent';
     description: '';
+    displayName: 'VignetteComponent';
   };
   attributes: {
     titre: Attribute.Component<'atomes.heading'>;
