@@ -599,6 +599,12 @@ export interface ApiAccueilAccueil extends Schema.SingleType {
           localized: true;
         };
       }>;
+    titre_bandeau: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<
       'api::accueil.accueil',
