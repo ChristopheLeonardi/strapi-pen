@@ -11,6 +11,7 @@ module.exports = {
         subject: 'Nouvau message du formulaire de contact',
         text: `Un nouveau message à été posté sur le formulaire du site planetearthnow.org :
         \n Le : ${result.publishedAt}
+        \n Objet : ${result.objet}
         \n Name : ${result.nom}
         \n Email : ${result.email}
         \n Message : ${result.message}`,

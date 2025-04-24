@@ -1,1 +1,31 @@
 *.tar.gz.enc
+# Logs
+*.log
+logs/
+*.tmp
+
+# Database backups (ex: SQLite or dumps)
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.bak
+*.backup
+
+# Local development files
+.env
+.env.*
+
+# Strapi-specific build and cache
+.cache/
+build/
+dist/
+public/uploads/
+
+# VS Code or editor-specific files
+.vscode/
+*.swp
+*.swo
+
+# Node modules
+node_modules/

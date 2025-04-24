@@ -1,9 +1,9 @@
-module.exports = ({ env }) => ({
+/* module.exports = ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
-  port: env.int('PORT', 1339),
-  url: env('PUBLIC_URL', 'http://85.31.236.134:1339'), // Ajoutez l'URL publique pour les redirections
+  port: env.int('PORT', 1337),
+  url: env('PUBLIC_URL', 'http://localhost:1337'),
   admin: {
-    url: env('ADMIN_URL', '/admin'), // URL admin si différente
+    url: '/admin/', // On tente de monter l'admin à la racine
   },
   app: {
     keys: env.array('APP_KEYS'),
@@ -11,9 +11,15 @@ module.exports = ({ env }) => ({
   webhooks: {
     populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
   },
-  // Optionnel : configuration des en-têtes pour le proxy
   proxy: {
     enabled: env.bool('PROXY_ENABLED', true),
   },
+}); */
+module.exports = ({ env }) => ({
+  host: env('HOST', '0.0.0.0'),
+  port: env.int('PORT', 1337),
+  url: env('PUBLIC_URL', 'https://admin.planetearthnow.org'),
+  app: {
+    keys: env.array('APP_KEYS'),
+  },
 });
-
