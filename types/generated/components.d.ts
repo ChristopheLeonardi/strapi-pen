@@ -84,7 +84,6 @@ export interface AtomesModulePhotoVideo extends Schema.Component {
   attributes: {
     Avis_expert: Attribute.Component<'molecules.avis-expert', true>;
     background_color: Attribute.String;
-    body: Attribute.Blocks;
     body_2: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5video.CKEditor5Video',
@@ -242,6 +241,21 @@ export interface MoleculesCta extends Schema.Component {
   };
 }
 
+export interface MoleculesMembre extends Schema.Component {
+  collectionName: 'components_molecules_membres';
+  info: {
+    displayName: 'Membre';
+  };
+  attributes: {
+    bio: Attribute.Text;
+    lien_linkedIn: Attribute.String;
+    Nom: Attribute.String;
+    photo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Poste: Attribute.String;
+    Prenom: Attribute.String;
+  };
+}
+
 export interface MoleculesModulePictoTrombi extends Schema.Component {
   collectionName: 'components_molecules_module_picto_trombis';
   info: {
@@ -268,6 +282,23 @@ export interface MoleculesModulePictoTrombi extends Schema.Component {
     titre: Attribute.String;
     titre_icons_group: Attribute.String;
     type: Attribute.Enumeration<['Icone', 'Collaborateur', 'Citations']>;
+  };
+}
+
+export interface MoleculesMosaiqueAction extends Schema.Component {
+  collectionName: 'components_molecules_mosaique_actions';
+  info: {
+    description: '';
+    displayName: 'mosaique_action';
+  };
+  attributes: {
+    actions: Attribute.Relation<
+      'molecules.mosaique-action',
+      'oneToMany',
+      'api::action.action'
+    >;
+    Sous_titre_mosaique: Attribute.Text;
+    Titre_mosaique: Attribute.String;
   };
 }
 
@@ -331,6 +362,19 @@ export interface MoleculesPersonnalisationForm extends Schema.Component {
   };
 }
 
+export interface MoleculesSeo extends Schema.Component {
+  collectionName: 'components_molecules_seos';
+  info: {
+    description: '';
+    displayName: 'SEO';
+  };
+  attributes: {
+    metaDescription: Attribute.String &
+      Attribute.DefaultTo<'Cr\u00E9\u00E9 en 2024, le fonds de dotation Planet Earth Now soutient des initiatives qui proposent de nouvelles mani\u00E8res de sensibiliser et de mobiliser autour des enjeux climat et biodiversit\u00E9. '>;
+    metaTitle: Attribute.String & Attribute.DefaultTo<'Planet Earth Now'>;
+  };
+}
+
 export interface MoleculesSomeActions extends Schema.Component {
   collectionName: 'components_molecules_some_actions';
   info: {
@@ -339,6 +383,18 @@ export interface MoleculesSomeActions extends Schema.Component {
   };
   attributes: {
     titrage: Attribute.Component<'atomes.heading', true>;
+  };
+}
+
+export interface MoleculesTrombinoscope extends Schema.Component {
+  collectionName: 'components_molecules_trombinoscopes';
+  info: {
+    displayName: 'Trombinoscope';
+  };
+  attributes: {
+    Membre: Attribute.Component<'molecules.membre', true>;
+    Soustitre_trombinoscope: Attribute.Text;
+    titre_trombinoscope: Attribute.String;
   };
 }
 
@@ -373,10 +429,14 @@ declare module '@strapi/types' {
       'molecules.bandeau-texte-photo': MoleculesBandeauTextePhoto;
       'molecules.contact-form': MoleculesContactForm;
       'molecules.cta': MoleculesCta;
+      'molecules.membre': MoleculesMembre;
       'molecules.module-picto-trombi': MoleculesModulePictoTrombi;
+      'molecules.mosaique-action': MoleculesMosaiqueAction;
       'molecules.partenariats': MoleculesPartenariats;
       'molecules.personnalisation-form': MoleculesPersonnalisationForm;
+      'molecules.seo': MoleculesSeo;
       'molecules.some-actions': MoleculesSomeActions;
+      'molecules.trombinoscope': MoleculesTrombinoscope;
       'molecules.vignette-component': MoleculesVignetteComponent;
     }
   }

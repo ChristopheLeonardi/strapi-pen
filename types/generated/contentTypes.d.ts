@@ -409,6 +409,12 @@ export interface ApiAboutAbout extends Schema.SingleType {
           localized: true;
         };
       }>;
+    conseil_administration: Attribute.Component<'molecules.trombinoscope'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::about.about',
@@ -459,6 +465,12 @@ export interface ApiAboutAbout extends Schema.SingleType {
         };
       }>;
     publishedAt: Attribute.DateTime;
+    SEO: Attribute.Component<'molecules.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Attribute.UID &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -472,6 +484,12 @@ export interface ApiAboutAbout extends Schema.SingleType {
         };
       }>;
     titre: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    trombinoscope: Attribute.Component<'molecules.trombinoscope'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -574,7 +592,19 @@ export interface ApiAccueilAccueil extends Schema.SingleType {
       'oneToMany',
       'api::accueil.accueil'
     >;
+    mosaique_actions: Attribute.Component<'molecules.mosaique-action'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Attribute.DateTime;
+    SEO: Attribute.Component<'molecules.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Attribute.UID &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -676,6 +706,12 @@ export interface ApiActionAction extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    SEO: Attribute.Component<'molecules.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Attribute.UID<'api::action.action', 'titre'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -701,6 +737,12 @@ export interface ApiActionAction extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    vignette_image: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
   };
 }
 
@@ -741,6 +783,12 @@ export interface ApiAgendaAgenda extends Schema.SingleType {
       'api::agenda.agenda'
     >;
     publishedAt: Attribute.DateTime;
+    SEO: Attribute.Component<'molecules.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     sousTitre: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -805,6 +853,7 @@ export interface ApiConfigurationConfiguration extends Schema.CollectionType {
     Phone_number: Attribute.String;
     profil_instagram: Attribute.String;
     profil_linkedin: Attribute.String;
+    profil_youtube: Attribute.String;
     publishedAt: Attribute.DateTime;
     traduction: Attribute.JSON;
     updatedAt: Attribute.DateTime;
@@ -872,6 +921,12 @@ export interface ApiContactContact extends Schema.SingleType {
       'api::contact.contact'
     >;
     publishedAt: Attribute.DateTime;
+    SEO: Attribute.Component<'molecules.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Attribute.UID &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -986,6 +1041,12 @@ export interface ApiMentionLegaleMentionLegale extends Schema.SingleType {
       'api::mention-legale.mention-legale'
     >;
     publishedAt: Attribute.DateTime;
+    SEO: Attribute.Component<'molecules.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Attribute.UID &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1025,13 +1086,23 @@ export interface ApiNosActionsNosActions extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     actions: Attribute.Relation<
       'api::nos-actions.nos-actions',
       'oneToMany',
       'api::action.action'
     >;
-    body: Attribute.Blocks;
+    body: Attribute.Blocks &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     body_2: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5video.CKEditor5Video',
@@ -1039,7 +1110,12 @@ export interface ApiNosActionsNosActions extends Schema.SingleType {
           preset: 'toolbar';
         }
       >;
-    bouton_see_more: Attribute.Component<'atomes.button'>;
+    bouton_see_more: Attribute.Component<'atomes.button'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::nos-actions.nos-actions',
@@ -1047,16 +1123,68 @@ export interface ApiNosActionsNosActions extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
-    CTA: Attribute.Component<'molecules.cta'>;
-    entete_background_color: Attribute.String;
-    entete_color: Attribute.String;
-    entete_image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    CTA: Attribute.Component<'molecules.cta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    entete_background_color: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    entete_color: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    entete_image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Attribute.String;
+    localizations: Attribute.Relation<
+      'api::nos-actions.nos-actions',
+      'oneToMany',
+      'api::nos-actions.nos-actions'
+    >;
     publishedAt: Attribute.DateTime;
+    SEO: Attribute.Component<'molecules.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Attribute.UID;
-    sousTitre: Attribute.Text;
-    text_position: Attribute.Enumeration<['left', 'right', 'center']>;
-    titre: Attribute.String;
-    titre_section_actions: Attribute.String;
+    sousTitre: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    text_position: Attribute.Enumeration<['left', 'right', 'center']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    titre: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    titre_section_actions: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<
       'api::nos-actions.nos-actions',

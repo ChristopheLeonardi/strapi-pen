@@ -144,6 +144,36 @@
         "preset": "toolbar"
       },
       "customField": "plugin::ckeditor5video.CKEditor5Video"
+    },
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "molecules.seo"
+    },
+    "trombinoscope": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "molecules.trombinoscope"
+    },
+    "conseil_administration": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "molecules.trombinoscope"
     }
   }
 }

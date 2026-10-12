@@ -90,6 +90,9 @@
     },
     "profil_linkedin": {
       "type": "string"
+    },
+    "profil_youtube": {
+      "type": "string"
     }
   }
 }

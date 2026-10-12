@@ -10,13 +10,27 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "titre": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "body": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "actions": {
       "type": "relation",
@@ -26,21 +40,41 @@
     "CTA": {
       "type": "component",
       "repeatable": false,
-      "component": "molecules.cta"
+      "component": "molecules.cta",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "titre_section_actions": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "bouton_see_more": {
       "type": "component",
       "repeatable": false,
-      "component": "atomes.button"
+      "component": "atomes.button",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "slug": {
       "type": "uid"
     },
     "sousTitre": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "entete_image": {
       "type": "media",
@@ -51,7 +85,12 @@
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "text_position": {
       "type": "enumeration",
@@ -59,13 +98,28 @@
         "left",
         "right",
         "center"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "entete_color": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "entete_background_color": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "body_2": {
       "type": "customField",
@@ -73,6 +127,16 @@
         "preset": "toolbar"
       },
       "customField": "plugin::ckeditor5video.CKEditor5Video"
+    },
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.seo",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

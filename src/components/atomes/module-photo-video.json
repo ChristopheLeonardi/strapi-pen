@@ -17,9 +17,6 @@
         "audios"
       ]
     },
-    "body": {
-      "type": "blocks"
-    },
     "Avis_expert": {
       "type": "component",
       "repeatable": true,

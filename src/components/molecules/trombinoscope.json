@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_molecules_trombinoscopes",
+  "info": {
+    "displayName": "Trombinoscope"
+  },
+  "options": {},
+  "attributes": {
+    "titre_trombinoscope": {
+      "type": "string"
+    },
+    "Soustitre_trombinoscope": {
+      "type": "text"
+    },
+    "Membre": {
+      "displayName": "Membre",
+      "type": "component",
+      "repeatable": true,
+      "component": "molecules.membre"
+    }
+  }
+}

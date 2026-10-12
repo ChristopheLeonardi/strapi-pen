@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_molecules_mosaique_actions",
+  "info": {
+    "displayName": "mosaique_action",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Titre_mosaique": {
+      "type": "string"
+    },
+    "Sous_titre_mosaique": {
+      "type": "text"
+    },
+    "actions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::action.action"
+    }
+  }
+}

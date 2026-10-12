@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_molecules_seos",
+  "info": {
+    "displayName": "SEO",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "metaTitle": {
+      "type": "string",
+      "default": "Planet Earth Now"
+    },
+    "metaDescription": {
+      "type": "string",
+      "default": "Créé en 2024, le fonds de dotation Planet Earth Now soutient des initiatives qui proposent de nouvelles manières de sensibiliser et de mobiliser autour des enjeux climat et biodiversité. "
+    }
+  }
+}
