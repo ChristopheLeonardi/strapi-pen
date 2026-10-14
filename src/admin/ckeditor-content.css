@@ -1,0 +1,123 @@
+/* src/admin/ckeditor-content.css */
+/* CKEditor 5 applique le rendu du contenu à .ck-content */
+@font-face {
+  font-family: 'bowlby';
+  src: url('../../public/fonts/bowlbyonesc-regular-web.woff2') format('woff2'),
+       url('../../public/fonts/bowlbyonesc-regular-web.woff') format('woff'),
+       url('../../public/fonts/bowlbyonesc-regular-web.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gilroy-heavy';
+  src: url('../../public/fonts/Gilroy-Heavy.woff2') format('woff2'),
+       url('../../public/fonts/Gilroy-Heavy.woff') format('woff'),
+       url('../../public/fonts/Gilroy-Heavy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gilroy';
+  src: url('../../public/fonts/Gilroy-Regular.woff2') format('woff2'),
+       url('../../public/fonts/Gilroy-Regular.woff') format('woff'),
+       url('../../public/fonts/Gilroy-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gilroy';
+  src: url('../../public/fonts/Gilroy-SemiBold.woff2') format('woff2'),
+       url('../../public/fonts/Gilroy-SemiBold.woff') format('woff'),
+       url('../../public/fonts/Gilroy-SemiBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  --background-grey: #ffffff;
+  --background-white: #ffffff;
+  --blue-pen: #2E519D;
+  --green-pen: #349837;
+  --dark-grey: #1a1a1a;
+  --medium-grey: #828282;
+  --light-grey: #d6d6d6;
+  --white: #ffffff;
+  --primary-font: "gilroy-heavy", arial, sans-serif;
+  --primary-font-alternate: "bowlby", arial, sans-serif;
+  --secondary-font:"gilroy", arial, sans-serif;
+  --rich-text-color:"#000";
+  --peche-pen: #fcc966;
+}
+
+
+.ck-content h4, .ck-content h5, .ck-content h6{
+  font-family: var(--primary-font);
+  font-size: 1.2em;
+}
+.ck-content h4{
+  font-size: 1.3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--peche-pen);
+}
+.ck-content p, .ck-content li{
+  font-size: 1.2em;
+}
+
+.ck-content p {
+  line-height: 1.6;
+}
+
+.rich-text-block a,
+.rich-text-block p{
+  color: inherit;
+}
+.ck-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+.ck-content h3,
+.ck-content h2{
+    font-family: var(--primary-font);
+    text-transform: uppercase;
+    color: var(--green-pen);
+    font-size: 1.5em;
+    margin-bottom: 1em !important;
+    margin-top: 1em;
+}
+.ck-content h4{
+    color: var(--peche-pen);
+}
+.ck-content h5{
+    font-weight: bold;
+}
+.ck-content h2{
+    color: var(--blue-pen);
+    text-transform: uppercase;
+    font-size: 2.5em;
+}
+.ck-content h1 {
+  font-family: var(--primary-font);
+  text-transform: capitalize;
+  font-size: 2.5em;
+  color: var(--blue-pen);
+  margin: 0 auto 0.25em;
+}
+.ck-content li,
+.ck-content p{
+  /* color: inherit !important; */
+  font-family: var(--secondary-font) !important;
+  font-size: 1.2rem !important;
+}
+.ck-content figure{
+  margin-left: 0;
+  margin-right: 0;
+}
+.ck-content blockquote{
+  font-style: italic;
+}
